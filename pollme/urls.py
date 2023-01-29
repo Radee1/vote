@@ -1,7 +1,7 @@
 """pollme URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/2.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
+    path('', views.home, name='home'),
+    path('list_view', views.index, name="list_view"),
     path('admin/', admin.site.urls),
-    path('accounts', include('allauth.urls')),
+    path('accounts/', include('accounts.urls', namespace="accounts")),
+    path('polls/', include('polls.urls', namespace="polls")),
 ]
