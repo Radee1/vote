@@ -70,3 +70,7 @@ def create_user(request):
 
 def payment_page(request):
     return render(request, 'accounts/payment_page.html')
+
+
+def newsletter(request):
+    return render(request, 'accounts/newsletter.html')
