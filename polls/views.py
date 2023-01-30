@@ -42,7 +42,7 @@ def polls_list(request):
 
 @login_required()
 def list_by_user(request):
-    all_polls = Poll.objects.filter(owner=request.user)
+    all_polls = Poll.objects.all()
     paginator = Paginator(all_polls, 7)  # Show 7 contacts per page
 
     page = request.GET.get('page')

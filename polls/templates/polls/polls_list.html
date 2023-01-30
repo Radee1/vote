@@ -55,8 +55,6 @@
                     {% endif %}
                     <a href="{% url 'polls:edit' poll.id %}" class="mr-3" data-toggle="tooltip" data-placement="top"
                         title="Edit Poll"><i class="fas fa-pencil-alt float-right btn btn-primary btn-sm mr-1"></i></a>
-                    {% else %}
-                    <h4 class="text-center mt-3 mb-3"> No available surveys/polls for you! </h4>
                     {% endif %}
                 </li>
                 {% endfor %}

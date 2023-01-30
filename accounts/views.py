@@ -15,7 +15,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             redirect_url = request.GET.get('next', 'list_view')
-            return redirect(redirect_url)
+            return redirect('polls:list')
         else:
             messages.error(request, "Username Or Password is incorrect!",
                            extra_tags='alert alert-warning alert-dismissible fade show')
@@ -66,3 +66,7 @@ def create_user(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'accounts/register.html', {'form': form})
+
+
+def payment_page(request):
+    return render(request, 'accounts/payment_page.html')

@@ -17,5 +17,13 @@ body {
 
 #home-content {
     text-align: center;
-    padding-top: 20%;
+    padding-top: 5%;
+}
+
+.pricing {
+    width: 45%;
+    background: white;
+    color: black;
+    padding: 5%;
+    margin: 2%;
 }
