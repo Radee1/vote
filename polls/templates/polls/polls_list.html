@@ -19,15 +19,15 @@
             </div>
             {% endif %}
 
-            <a class="btn btn-{% if 'name' in request.GET %}warning{% else %}primary{% endif %} mb-3" href="?name=True"
+            <a class="btn btn-{% if 'name' in request.GET %}warning{% else %}info{% endif %} mb-3" href="?name=True"
                 role="button"><i class="fas fa-sort-alpha-down"></i>
                 Name</a>
-            <a class="btn btn-{% if 'date' in request.GET %}warning{% else %}primary{% endif %} mb-3" href="?date=True"
+            <a class="btn btn-{% if 'date' in request.GET %}warning{% else %}info{% endif %} mb-3" href="?date=True"
                 role="button"><i class="far fa-clock"></i> Date</a>
-            <a class="btn btn-{% if 'vote' in request.GET %}warning{% else %}primary{% endif %} mb-3" href="?vote=True"
+            <a class="btn btn-{% if 'vote' in request.GET %}warning{% else %}info{% endif %} mb-3" href="?vote=True"
                 role="button"><i class="fas fa-poll"></i> Vote</a>
 
-            <a class="btn btn-primary mb-3 float-right" href="{% url 'polls:add' %}" role="button">Add <i
+            <a class="btn btn-info mb-3 float-right" href="{% url 'polls:add' %}" role="button">Add <i
                     class="fas fa-plus"></i></a>
 
             <form class="form-inline">
@@ -35,7 +35,7 @@
                     <input type="search" class="form-control" name="search" placeholder="Search"
                         value={{ search_term }}>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-search"></i></button>
+                <button type="submit" class="btn btn-info mb-2"><i class="fas fa-search"></i></button>
             </form>
 
 
@@ -54,7 +54,7 @@
                             class="fas fa-step-forward float-right btn btn-danger btn-sm"></i></a>
                     {% endif %}
                     <a href="{% url 'polls:edit' poll.id %}" class="mr-3" data-toggle="tooltip" data-placement="top"
-                        title="Edit Poll"><i class="fas fa-pencil-alt float-right btn btn-primary btn-sm mr-1"></i></a>
+                        title="Edit Poll"><i class="fas fa-pencil-alt float-right btn btn-info btn-sm mr-1"></i></a>
                     {% endif %}
                 </li>
                 {% endfor %}
@@ -70,7 +70,7 @@
                             href="?page={{ polls.previous_page_number }}&{{ params }}">Previous</a></li>
                     {% endif %}
 
-                    <li class="page-item active"><a class="page-link" href="">{{ polls.number }}</a></li>
+                    <li class="page-item active"><a class="page-link" href="">Page {{ polls.number }}</a></li>
 
                     {% if polls.has_next %}
                     <li class="page-item"><a class="page-link"
