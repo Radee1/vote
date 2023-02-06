@@ -24,6 +24,11 @@
                         <hr>
                         <h2>$100</h2>
                         <hr>
+                        <a href="{% url 'accounts:register' %}">
+                            <button class="btn btn-lg btn-danger">
+                                Publish
+                            </button>
+                        </a>
                     </div>
                     <div class="pricing">
                         <hr>
@@ -33,6 +38,11 @@
                         <hr>
                         <h2>$1</h2>
                         <hr>
+                        <a href="{% url 'accounts:register' %}">
+                            <button class="btn btn-lg btn-success">
+                                Respond
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <br><br>
@@ -40,13 +50,13 @@
                     <h2>Stay In Touch</h2>
                     <br><br>
                     <a href="{% url 'accounts:newsletter' %}">
-                        <button class="btn btn-lg btn-danger">
+                        <button class="btn btn-lg btn-warning">
                             Subscribe to Our Newsletter
                         </button>
                     </a>
                     <br><br>
                     <a href="https://www.facebook.com/" target="_blank">
-                        <button class="btn btn-lg btn-info">
+                        <button class="btn btn-lg btn-primary">
                             Follow us on Facebook
                         </button>
                     </a>
