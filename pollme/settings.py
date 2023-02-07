@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-if0zdcz-hv8os)8f)y=^jab@ljb%kkwj_t5h(%a$g87pxw2^sk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://vote4me.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['https://vote4me.herokuapp.com/','vote4me.herokuapp.com']
 
 
 # Application definition
