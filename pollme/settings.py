@@ -121,7 +121,7 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_NAME'))
+    'default': dj_database_url.parse.env('DATABASE_NAME')
 }
 
 
