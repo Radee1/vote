@@ -1,13 +1,10 @@
-import datetime
 from django.test import TestCase
-from django.utils import timezone
 from .models import Poll
 
-class UrlTest(TestCase):
+class ModelTest(TestCase):
 
-    def testPollsPage(self):
-        response = self.client.get('/polls')
-        print(response)
-
-        self.assertEqual(response.status_code, 200)
-
+    def testPollModel(self):
+        poll = Poll.objects.create(owner="Dada1",text="Test Text" )
+        self.assertEquals(str(poll), 'Test_Poll')
+        print("IsInstance : ",isinstance(poll,Poll))
+        self.assertTrue(isinstance(poll,Poll))
