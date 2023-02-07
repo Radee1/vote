@@ -15,7 +15,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             redirect_url = request.GET.get('next', 'list_view')
-            return redirect('polls:list')
+            return redirect('accounts:dashboard')
         else:
             messages.error(request, "Username Or Password is incorrect!",
                            extra_tags='alert alert-warning alert-dismissible fade show')
@@ -74,3 +74,6 @@ def payment_page(request):
 
 def newsletter(request):
     return render(request, 'accounts/newsletter.html')
+
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
