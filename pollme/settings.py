@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-if0zdcz-hv8os)8f)y=^jab@ljb%kkwj_t5h(%a$g87pxw2^sk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -116,7 +116,7 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 if 'DATABASE_URL' in os.environ:
 
     DATABASES = {
-        'default': dj_database_url.parse.env('DATABASE_NAME')
+        'default': dj_database_url.parse('postgres://fceamupf:qeXs_6oWCK4j1L6BNhFHiKtWQ2m1ZqLx@snuffleupagus.db.elephantsql.com/fceamupf')
     }
 else:
     DATABASES = {
@@ -173,8 +173,8 @@ if 'USE_AWS' in os.environ:
     # Bucket config
     AWS_STORAGE_BUCKET_NAME = 'vote4me'
     AWS_S3_REGION_NAME = 'eu-north-1'
-    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_ACCESS_KEY_ID = 'AKIAQYWQTYJT764D7FND'
+    AWS_SECRET_ACCESS_KEY = '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'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
     # Static and Media Files
@@ -184,7 +184,7 @@ if 'USE_AWS' in os.environ:
     MEDIAFILES_LOCATION = 'media'
 
     # Overide Static and media urls in production
-    STATIC_ROOT = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Default primary key field type
