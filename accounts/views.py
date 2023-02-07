@@ -77,3 +77,10 @@ def newsletter(request):
 
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
+
+
+def handler404(request, exception):
+    #Error Handler 404- Page not found
+    return render(request, 'notfound.html', status=404)
+
+
