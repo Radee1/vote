@@ -27,7 +27,7 @@
             <a class="btn btn-{% if 'vote' in request.GET %}warning{% else %}info{% endif %} mb-3" href="?vote=True"
                 role="button"><i class="fas fa-poll"></i> Vote</a>
 
-            <a class="btn btn-info mb-3 float-right" href="{% url 'polls:add' %}" role="button">Add <i
+            <a class="btn btn-info mb-3 float-right" target="_blank" href="{% url 'polls:add' %}" role="button">Add <i
                     class="fas fa-plus"></i></a>
 
             <form class="form-inline">

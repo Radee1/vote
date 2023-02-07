@@ -12,56 +12,33 @@
                 <div class="row">
                     <div class="pricing">
                         <hr>
-                        <h3>Earnings</h3>
+                        <h3>Respond</h3>
                         <hr>
                         <p>Survey respondents each get paid for every single response</p>
                         <hr>
-                        <h2>$100</h2>
+                        <h2>$1</h2>
                         <hr>
-                        <a href="{% url 'accounts:payment_page' %}">
+                        <a href="{% url 'polls:list' %}">
                             <button class="btn btn-lg btn-success">
-                                Withdraw
+                                Take Survey
                             </button>
                         </a>
                     </div>
                     <div class="pricing">
                         <hr>
-                        <h3>Outstanding Bills</h3>
-                        <hr>
-                        <p>The standard cost for publishing a poll or survey </p>
-                        <hr>
-                        <h2>$1</h2>
-                        <hr>
-                        <a href="{% url 'accounts:payment_page' %}">
-                            <button class="btn btn-lg btn-danger">
-                                Pay Bill
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="pricing">
-                        <hr>
-                        <h3>Taken Surveys</h3>
-                        <hr>
-                        <p>Survey respondents each get paid for every single response</p>
-                        <hr>
-                        <h2>$1</h2>
-                        <hr>
-                        <a class="btn btn-info btn-lg" href="{% url 'polls:list' %}" role="button">Take Survey</a>
-                    </div>
-                    <div class="pricing">
-                        <hr>
-                        <h3>Posted Surveys</h3>
+                        <h3>Publish</h3>
                         <hr>
                         <p>The standard cost for publishing a poll or survey </p>
                         <hr>
                         <h2>$100</h2>
                         <hr>
-                        <a class="btn btn-danger btn-lg" href="#" role="button">Post Survey</a>
+                        <a href="{% url 'polls:list' %}">
+                            <button class="btn btn-lg btn-danger">
+                                Post Survey
+                            </button>
+                        </a>
                     </div>
                 </div>
-
                 <br><br>
                 <div>
                     <h2>Stay In Touch</h2>
