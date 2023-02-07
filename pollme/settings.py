@@ -60,26 +60,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'pollme.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
 
 TEMPLATES = [
     {
@@ -167,25 +150,24 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-if 'USE_AWS' in os.environ:
-    # Bucket config
-    AWS_STORAGE_BUCKET_NAME = 'vote4me'
-    AWS_S3_REGION_NAME = 'eu-north-1'
-    AWS_ACCESS_KEY_ID = 'AKIAQYWQTYJT764D7FND'
-    AWS_SECRET_ACCESS_KEY = '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'
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    # Static and Media Files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
+# Bucket config
+AWS_STORAGE_BUCKET_NAME = 'vote4me'
+AWS_S3_REGION_NAME = 'eu-north-1'
+AWS_ACCESS_KEY_ID = 'AKIAQYWQTYJT764D7FND'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    # Overide Static and media urls in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+# Static and Media Files
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+
+# Overide Static and media urls in production
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
