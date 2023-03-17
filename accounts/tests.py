@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+
 class UrlTest(TestCase):
 
     def testHomePage(self):

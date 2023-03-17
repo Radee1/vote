@@ -26,12 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-if0zdcz-hv8os)8f)y=^jab@ljb%kkwj_t5h(%a$g87pxw2^sk'
+ke = 'django-insecure-if0zdcz-hv8os)8f)y=^jab@ljb%kkwj_t5h(%a$g87pxw2^sk'
+SECRET_KEY = ke
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://vote4me.herokuapp.com/','vote4me.herokuapp.com']
+ALLOWED_HOSTS = ['https://vote4me.herokuapp.com/', 'vote4me.herokuapp.com']
 
 
 # Application definition
@@ -98,9 +99,11 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-
+    pg_a1 = 'postgres://fceamupf:qeXs_6oWCK4j1L6BNhFHiKtWQ2m1ZqLx'
+    pg_ext = '@snuffleupagus.db.elephantsql.com/fceamupf'
+    pg_db = pg_a1 + pg_ext
     DATABASES = {
-        'default': dj_database_url.parse('postgres://fceamupf:qeXs_6oWCK4j1L6BNhFHiKtWQ2m1ZqLx@snuffleupagus.db.elephantsql.com/fceamupf')
+        'default': dj_database_url.parse(pg_db)
     }
 else:
     DATABASES = {
@@ -113,18 +116,23 @@ else:
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+auth_1 = 'django.contrib.auth.password_validation.CommonPasswordValidator'
+auth_2 = 'django.contrib.auth.password_validation.CommonPasswordValidator'
+auth_3 = 'django.contrib.auth.password_validation.MinimumLengthValidator'
+au = 'django.contrib.auth.password_validation.'
+auth_4 = au+'UserAttributeSimilarityValidator'
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': auth_4,
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': auth_3,
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': auth_1,
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': auth_2,
     },
 ]
 
@@ -147,24 +155,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-
 # Bucket config
 AWS_STORAGE_BUCKET_NAME = 'vote4me'
 AWS_S3_REGION_NAME = 'eu-north-1'
-#AWS_ACCESS_KEY_ID = ''
-#AWS_SECRET_ACCESS_KEY = ''
-#AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_ACCESS_KEY_ID = ''
+# AWS_SECRET_ACCESS_KEY = ''
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 # Static and Media Files
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-#STATICFILES_LOCATION = 'static'
-#DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-#MEDIAFILES_LOCATION = 'media'
+# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+# STATICFILES_LOCATION = 'static'
+# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+# MEDIAFILES_LOCATION = 'media'
 
 # Overide Static and media urls in production
-#STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -179,8 +186,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#import django_heroku
-#django_heroku.settings(locals(), staticfiles=False)
-
-
-
+# import django_heroku
+# django_heroku.settings(locals(), staticfiles=False)
