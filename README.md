@@ -151,7 +151,29 @@ This enables respondents to get pay for the surveys taken.
 
 ![The pay respondent page](static/img/payrespondent.PNG)
 
+**Features left to Implement**
+
+* Exapnd access levels to include three access levels instead of the initial two being surveyors and respondents. The three would be surveyors, respondents and the platform admin who is independent of the surveyors or respondents.
+
+* Implement live payment method since this is a prototype and the current payment method is in test mode. There it cannot process live payments.
+
 ---------
+
+## DATABASE SCHEMA
+
+The database schema is comprised of the following custom models;
+
+![The database schema](static/img/erd_vote.PNG)
+
+**1.User**
+
+* The User model is used to capture vote user details. These include details for surveyors and respondents. This model's unique identifier is the user ID.
+
+**2.Poll**
+
+**3.Vote**
+
+**4.Choice**
 
 ## TESTING AND VALIDATION
 
