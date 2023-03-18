@@ -76,7 +76,8 @@ def polls_add(request):
                 )
 
                 # return redirect('polls:list')
-                return redirect("https://buy.stripe.com/test_dR62btcYgekCcSI000")
+                return redirect(
+                    "https://buy.stripe.com/test_dR62btcYgekCcSI000")
         else:
             form = PollAddForm()
         context = {
