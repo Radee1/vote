@@ -191,23 +191,25 @@ The database schema is comprised of the following custom models;
 
 * The choice model has a one to many relationship to the different models in the database.
 
+------------
+
 ## TESTING AND VALIDATION
 
 * Ecommerce testing was performed where various ecommerce elements such as design, specifications, functionalities, pages and features are tested to check their sanity and ensure they are not harming the performance of the site in any manner possible.
 
 **Testing plan for the vote platform**
 
-•	Users can log in
-•	Users can register as a business/surveyor or respondent
-•	The main/landing page of the vote platform loads
-•	The payment page loads
-•	A single service page loads
-•	A business user can add, update a survey
-•	A respondent user can view and fill a survey
-•	A business user can view the total polls, and answers
-•	A respondent can view the total polls filled
-•	Both business and respondents can reach the logout page
-•	A registered user can logout
+*	Users can log in
+*	Users can register as a business/surveyor or respondent
+*	The main/landing page of the vote platform loads
+*	The payment page loads
+*	A single service page loads
+*	A business user can add, update a survey
+*	A respondent user can view and fill a survey
+*	A business user can view the total polls, and answers
+*	A respondent can view the total polls filled
+*	Both business and respondents can reach the logout page
+*	A registered user can logout
 
 **Testing**
 
