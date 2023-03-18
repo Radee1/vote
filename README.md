@@ -161,6 +161,8 @@ This enables respondents to get pay for the surveys taken.
 
 ## DATABASE SCHEMA
 
+Within the vote 4 me database, a user or surveyor creates a poll, this poll is comprised of choices upon which the respondent votes.
+
 The database schema is comprised of the following custom models;
 
 ![The database schema](static/img/erd_vote.PNG)
@@ -171,9 +173,23 @@ The database schema is comprised of the following custom models;
 
 **2.Poll**
 
+* This model is used capture poll data. This includes poll status, poll ID being the primary key, date of publishment and the owner of the poll which is the surveyor. The poll model is related to all the models in the vote database schema. This relationship is enforced by the presence of the users's ID as a foreign key.
+
+* Furthermore, the poll ID also appears as the foreign key in the vote and choice models.
+
 **3.Vote**
 
+* This model is used to capture vote details which include vote ID as a primary key, user ID, choice ID, and poll ID as foreign keys.
+
+* These foreign keys represent the vote owner or respondent, the choice being the answer of the respondent and poll ID being the poll under which the choices are categorized.
+
+* This illustrates a one to many relationship between the vote, choice, poll and user models.
+
 **4.Choice**
+
+* The choice model is used to capture choice ID as a primary key, poll ID as a foreign key for which poll the choice belongs to and also the choice text.
+
+* The choice model has a one to many relationship to the different models in the database.
 
 ## TESTING AND VALIDATION
 
