@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-ke = 'django-insecure-if0zdcz-hv8os)8f)y=^jab@ljb%kkwj_t5h(%a$g87pxw2^sk'
-SECRET_KEY = ke
+SECRET_KEY = env("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -99,9 +99,7 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-    pg_a1 = 'postgres://fceamupf:qeXs_6oWCK4j1L6BNhFHiKtWQ2m1ZqLx'
-    pg_ext = '@snuffleupagus.db.elephantsql.com/fceamupf'
-    pg_db = pg_a1 + pg_ext
+    pg_db = env("DATABASE_NAME")
     DATABASES = {
         'default': dj_database_url.parse(pg_db)
     }
@@ -156,11 +154,8 @@ USE_TZ = True
 
 
 # Bucket config
-AWS_STORAGE_BUCKET_NAME = 'vote4me'
-AWS_S3_REGION_NAME = 'eu-north-1'
-# AWS_ACCESS_KEY_ID = ''
-# AWS_SECRET_ACCESS_KEY = ''
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
 
 # Static and Media Files
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
