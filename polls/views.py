@@ -75,7 +75,8 @@ def polls_add(request):
                     extra_tags=e_tag
                 )
 
-                return redirect('polls:list')
+                # return redirect('polls:list')
+                return redirect("https://buy.stripe.com/test_dR62btcYgekCcSI000")
         else:
             form = PollAddForm()
         context = {
@@ -227,7 +228,8 @@ def poll_vote(request, poll_id):
         vote = Vote(user=request.user, poll=poll, choice=choice)
         vote.save()
         print(vote)
-        return render(request, 'polls/poll_result.html', {'poll': poll})
+        # return render(request, 'polls/poll_result.html', {'poll': poll})
+        return redirect("https://buy.stripe.com/test_dR67vN6zSgsK05WaEF")
     else:
         messages.error(
             request,
