@@ -17,8 +17,11 @@ def login_user(request):
             redirect_url = request.GET.get('next', 'list_view')
             return redirect('accounts:dashboard')
         else:
-            messages.error(request, "Username Or Password is incorrect!",
-                           extra_tags='alert alert-warning alert-dismissible fade show')
+            messages.error(
+                request,
+                "Username Or Password is incorrect!",
+                extra_tags='alert alert-warning alert-dismissible fade show'
+            )
 
     return render(request, 'accounts/login.html')
 
@@ -41,27 +44,47 @@ def create_user(request):
             email = form.cleaned_data['email']
 
             if password1 != password2:
+                e_tag = 'alert alert-warning alert-dismissible fade show'
                 check1 = True
-                messages.error(request, 'Password did not match!',
-                               extra_tags='alert alert-warning alert-dismissible fade show')
+                messages.error(
+                    request,
+                    'Password did not match!',
+                    extra_tags=e_tag
+                )
             if User.objects.filter(username=username).exists():
+                e_tag = 'alert alert-warning alert-dismissible fade show'
                 check2 = True
-                messages.error(request, 'Username already exists!',
-                               extra_tags='alert alert-warning alert-dismissible fade show')
+                messages.error(
+                    request,
+                    'Username already exists!',
+                    extra_tags=e_tag
+                )
             if User.objects.filter(email=email).exists():
+                e_tag = 'alert alert-warning alert-dismissible fade show'
                 check3 = True
-                messages.error(request, 'Email already registered!',
-                               extra_tags='alert alert-warning alert-dismissible fade show')
+                messages.error(
+                    request,
+                    'Email already registered!',
+                    extra_tags=e_tag
+                )
 
             if check1 or check2 or check3:
+                e_tag = 'alert alert-warning alert-dismissible fade show'
                 messages.error(
-                    request, "Registration Failed!", extra_tags='alert alert-warning alert-dismissible fade show')
+                    request,
+                    "Registration Failed!",
+                    extra_tags=e_tag
+                )
                 return redirect('accounts:register')
             else:
+                e_tag = 'alert alert-success alert-dismissible fade show'
                 user = User.objects.create_user(
                     username=username, password=password1, email=email)
                 messages.success(
-                    request, f'Thanks for registering {user.username}.', extra_tags='alert alert-success alert-dismissible fade show')
+                    request,
+                    f'Thanks for registering {user.username}.',
+                    extra_tags=e_tag
+                )
                 return redirect('accounts:login')
     else:
         form = UserRegistrationForm()
@@ -74,6 +97,7 @@ def payment_page(request):
 
 def newsletter(request):
     return render(request, 'accounts/newsletter.html')
+
 
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
