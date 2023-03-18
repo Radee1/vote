@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in env:
-    pg_db = env("DATABASE_NAME")
+    pg_db = env("DATABASE_URL")
     DATABASES = {
         'default': dj_database_url.parse(pg_db)
     }
