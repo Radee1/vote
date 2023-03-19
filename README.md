@@ -27,6 +27,18 @@ If you're a marketer or entrepreneur, you can poll customers to get straight ans
 
 **NOTE:** For the surveys, vote presents surveys in the form of multiple-choice questions and in that way reduces the amount of unwanted data from the polls or surveys. The choice to use multiple choice questions is also advantageous to the respondents in the sense that it saves time on filling, is convenient and easy to understand.
 
+**DESIGN PROCESS AND ITS REASONING**
+
+The design process comprised of;
+* designing the navigation bar for easy naviagtion across the platform
+* creating the base html file to prevent repeatition of html tags
+* creating models for the polls, choices and votes
+* creating pages for registration and logins
+* Create a landing page for users to land on after accessing the site or welcome them on the page.
+* create a home page to control access to services offered by vote
+* writing logic to control access to polls
+* configure payment link or API to collect payments from suveyors and to pay respondents.
+
 ### VOTE MARKETING STRATEGIES
 
 * Sharing a direct link to the online survey.
@@ -88,10 +100,37 @@ As a business, I want to view the total number of answered polls, be able to see
 **USER STORIES CATEGORIES SUMMARY**
 
 1.	Viewing and Navigation
+
+* The main/landing page of the vote platform loads-should have
+* users both registered and unregistered can view the vote site-must have
+* users can navigate from the landing page, registration page-must have
+
 2.	Registration and User accounts
+
+* users can register as a business/surveyor or respondent/suveyee-must have
+* users can log in-should have
+* users can sign in with username and passwords-must have
+* users can log out-should have
+
 3.	Creating and Taking survey polls
+
+* a single service page loads-should have
+* a business user can add, update a survey-must have
+* a respondent can view and fill the survey-must have
+* a business user can view the total polls and answers-should have
+* a respondent can view the total polls filled-should have
+
 4.	Payments
+
+* The payment page loads-should have
+* both business and respondents can reach the checkout page-must have
+* the surveyor can pay for posting a survey-must have
+* the respondent can receive payment for filling a survey-must have
+
 5.	Administration and platform management.
+
+* the surveyor can delete old surveys-could have
+* separate portal for site administrators-would have
 
 ------
 
@@ -235,20 +274,21 @@ tested by checking if a poll can be created by a non exitent user.
 ![The automated tests](static/img/unit_tests.PNG)
 
 **2.The functionality of the site**
-The Vote application operates or functions, simply by, a respondent or user accessing the platform through the index or landing page,
+
+* The Vote application operates or functions, simply by, a respondent or user accessing the platform through the index or landing page,
 he or she then can navigate through the application through the navigation bar located a the top of every page. He she cannot access the vote services
 before he/she signs up using the register page. After successful registration, users are then redirected to the login page where they can login and access
 vote surveys and other services.
 
-Suveyors on the other hand are registered by the Vote platform admins, surveyors can create polls but are automatically redirected to a payment link where they pay
+* Suveyors on the other hand are registered by the Vote platform admins, surveyors can create polls but are automatically redirected to a payment link where they pay
 for posting a survey or poll. Each poll among other attributes, comprises of an Id, multiple choices and votes on each respective choice. Only surveyors can create, delete or update polls or surveys.
 
-After addition of polls and their different choices, only the logged in or authorised respondents can then vote once on every poll and are then redirected to a payment 
+* After addition of polls and their different choices, only the logged in or authorised respondents can then vote once on every poll and are then redirected to a payment
 link where they can collect payment for every single vote they cast, or opinion they share. Votes are compiled after every vote and results are visible to the surveyors who can then close the polls.
 
-All users can log out at will, after transacting as pleased and getting paid with the vote platform.
+* All users can log out at will, after transacting as pleased and getting paid with the vote platform.
 
-I have tested and comfirmed that all the functionality mentioned herein works as described.
+* I have tested and comfirmed that all the functionality mentioned herein works as described.
 
 **3.Responsiveness**
 
@@ -264,11 +304,11 @@ I have tested and comfirmed that all the functionality mentioned herein works as
 
 ### Validation
 
-•	Frontend validation was used to ensure that form data being submitted to our views are not empty or null.
+*	Frontend validation was used to ensure that form data being submitted to our views are not empty or null.
 
 ![The frontend validation](static/img/front_end_validtn.PNG)
 
-•	Server-side validation was used to ensure that the right data was being posted before capturing it to the database.
+*	Server-side validation was used to ensure that the right data was being posted before capturing it to the database.
 
 **Validator testing**
 
@@ -304,59 +344,61 @@ I have tested and comfirmed that all the functionality mentioned herein works as
 
 **Version Control**
 
-•	The site was created using the Visual Studio Code editor and pushed to GitHub to the remote repository vote.
+*	The site was created using the Visual Studio Code editor and pushed to GitHub to the remote repository vote.
 
 The following git commands were used throughout development to push code to the remote repo:
 
-•	git add - This command was used to add the file(s) to the staging area before they are committed.
+*	git add - This command was used to add the file(s) to the staging area before they are committed.
 
-•	git commit -m "commit message" - This command was used to commit changes to the local repository queue ready for the final step.
+*	git commit -m "commit message" - This command was used to commit changes to the local repository queue ready for the final step.
 
-•	git push - This command was used to push all committed code to the remote repository on GitHub.
+*	git push - This command was used to push all committed code to the remote repository on GitHub.
 
 **Heroku deployment**
 
 The following steps were followed to deploy this project to Heroku:
 
-•	Go to Heroku and click "New" to create a new app(“vote4me”).
+*	Go to Heroku and click "New" to create a new app(“vote4me”).
 
-•	Choose an app name and region (“EU Stockholm-eu-north-1”), click "Create app"
+*	Choose an app name and region (“EU Stockholm-eu-north-1”), click "Create app"
 
-•	Go to "Settings" and navigate to Config Vars. Add the following config variables:
+*	Go to "Settings" and navigate to Config Vars. Add the following config variables:
 PORT : 8000
 disable_connectstatic:1
 
-•	Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
+*	Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
 
-•	Navigate to "Deploy". Set the deployment method to GitHub and enter repository name (“vote”) and connect.
+*	Navigate to "Deploy". Set the deployment method to GitHub and enter repository name (“vote”) and connect.
 
-•	Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
+*	Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
 
-•	The app will now be deployed to Heroku
+*	The app will now be deployed to Heroku.
+
+* The live link can be found here https://vote4me.herokuapp.com/
 
 --------
 
 ## CREDITS
 
-•	Boutique ado project videos on how to deploy the application to Heroku, use AWS, Mailchimp and stripe.
+*	Boutique ado project videos on how to deploy the application to Heroku, use AWS, Mailchimp and stripe.
 
-•	W3C Schools for functions used in this python command line terminal application https://www.w3schools.com/python/python_functions.asp
+*	W3C Schools for functions used in this python command line terminal application https://www.w3schools.com/python/python_functions.asp
 
-•	You tube tutorials on how to import library in python https://www.youtube.com/watch?v=h0oRPIlnJYQ
+*	You tube tutorials on how to import library in python https://www.youtube.com/watch?v=h0oRPIlnJYQ
 
-•	Survey and poll data about why the use of polls for entrepreneurs or businesses obtained from https://www.typeform.com/examples/polls/
+*	Survey and poll data about why the use of polls for entrepreneurs or businesses obtained from https://www.typeform.com/examples/polls/
 
-•	 Free photos used for the landing page from pixabay obtained from https://pixabay.com/images/search/free%20images/
+*	 Free photos used for the landing page from pixabay obtained from https://pixabay.com/images/search/free%20images/
 
-•	Ecommerce testing description obtained from https://vwo.com/blog/ecommerce-testing/
+*	Ecommerce testing description obtained from https://vwo.com/blog/ecommerce-testing/
 
-•	Stripe payments data obtained from https://dashboard.stripe.com/payments
+*	Stripe payments data obtained from https://dashboard.stripe.com/payments
 
-•	AWS bucket creation pdf document obtained from https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf
+*	AWS bucket creation pdf document obtained from https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf
 
-•	Solutions to questions and bugs using stack overflow https://stackoverflow.com/
+*	Solutions to questions and bugs using stack overflow https://stackoverflow.com/
 
-•	Fixed some pep8 validation errors using stack overflow https://stackoverflow.com/questions/492387/indentationerror-unindent-does-not-match-any-outer-indentation-level
+*	Fixed some pep8 validation errors using stack overflow https://stackoverflow.com/questions/492387/indentationerror-unindent-does-not-match-any-outer-indentation-level
 
 
 
