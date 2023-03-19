@@ -31,9 +31,15 @@ Sharing a direct link to the online survey.
 
 Partnering with relevant influencers on social media like Facebook who can help spread the word.
 
+![The facebook page1](static/img/votefb1.JPG)
+
+![The facebook page2](static/img/votefb.JPG)
+
 Offering a prize for participants to encourage more involvement.
 
 The use of newsletters through email marketing with the help of Mailchimp.
+
+![The Mailchimp News letter](static/img/mailchimpnewsletter.PNG)
 
 ### USERS:
 
