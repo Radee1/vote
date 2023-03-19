@@ -1,108 +1,401 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# VOTE
 
-Welcome Radee1,
+![The multidevice mockup for vote](static/img/multidevicemockup.PNG)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**WHO:** The business model that the Vote ecommerce platform uses is a B2B (Business to Business). This means that other businesses or organizations are our customers.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+**WHAT(Deliverable):** Vote ecommerce website is a platform that offers services. The site offers survey or poll services because we believe that feedback matters. Businesses come with their queries and then we connect them to users on the platform who are in turn paid for their time to take the surveys. Therefore, vote enables clients to create and the respondents to take surveys through paid opinion polls.
 
-## Gitpod Reminders
+**GOAL OF VOTE**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The goal is to create a poll to inform marketing strategies and get instant feedback or predict voter behaviour.
+The other goal is to be fast, be easy and to create a platform that works on any device.
 
-`python3 -m http.server`
+**PURPOSE OF VOTE**
 
-A blue button should appear to click: _Make Public_,
+To bridge the gap and to connect the surveyors and the respondents.
 
-Another blue button should appear to click: _Open Browser_.
+**WHY FOR BUSINESSES**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+If you're a marketer or entrepreneur, you can poll customers to get straight answers about how to improve your product or service. You can also discover which competitor, if any, has a better solution. Using a poll creator is fast, cheap to manage, and gets you data quickly. Hand out the same poll several times throughout the year to see how crowd sentiment changes.
 
-A blue button should appear to click: _Make Public_,
+**HOW: Vote has two types of payments**
 
-Another blue button should appear to click: _Open Browser_.
+1.	From the clients, in this case the businesses who have brought the surveys in other words the surveyors.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+2.	The Users taking the surveys (surveyees). The surveyees or respondents in this case are expected to first take the polls, answer or fulfil their end of the deal. After which they will receive payment on successful submission of their opinions.
 
-To log into the Heroku toolbelt CLI:
+**NOTE:** For the surveys, vote presents surveys in the form of multiple-choice questions and in that way reduces the amount of unwanted data from the polls or surveys. The choice to use multiple choice questions is also advantageous to the respondents in the sense that it saves time on filling, is convenient and easy to understand.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**DESIGN PROCESS AND ITS REASONING**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The design process comprised of;
+* designing the navigation bar for easy naviagtion across the platform
+* creating the base html file to prevent repeatition of html tags
+* creating models for the polls, choices and votes
+* creating pages for registration and logins
+* Create a landing page for users to land on after accessing the site or welcome them on the page.
+* create a home page to control access to services offered by vote
+* writing logic to control access to polls
+* configure payment link or API to collect payments from suveyors and to pay respondents.
+
+### VOTE MARKETING STRATEGIES
+
+* Sharing a direct link to the online survey.
+
+* Partnering with relevant influencers on social media like Facebook who can help spread the word.
+
+![The facebook page1](static/img/votefb1.JPG)
+
+![The facebook page2](static/img/votefb.JPG)
+
+* Offering a prize for participants to encourage more involvement.
+
+* The use of newsletters through email marketing with the help of Mailchimp.
+
+![The Mailchimp News letter](static/img/mailchimpnewsletter.PNG)
+
+### USERS:
+
+The users of the Vote platform include the platform administrator, the business which requires a service from vote (the surveyor) and the people taking the surveys (or the participants or respondents)
+
+## USER STORIES
+
+**THE PLATFORM**
+
+The vote platform will allow users to register for an account either as a business or as a respondent.
+
+The platform will allow users to login and out, be able to reset their passwords if they have forgotten it.
+
+The platform will allow the logged in users to have access to personalized user profiles and possibly store their default payments and log their survey activities.
+
+The platform will allow users to view their surveys, the taken surveys or the created surveys (that is the survey history).
+
+**AS A PLATFORM ADMINISTRATOR USER**
+
+As a platform administrator, I want to have access to the list of people who have signed up, list of polls taken and the votes.
+
+As a platform administrator, I want to be able to add a survey. To add a new survey form with multiple choice questions.
+
+As a platform administrator, I want to be able to edit or update a survey service. To change survey service prices, if need be, the survey descriptions and other survey service criteria.
+
+As a platform administrator, I want to be able to delete a survey. To remove old and completed survey polls that are no longer of use.
+
+**AS A RESPONDENT USER**
+
+As a respondent, I want to be able to view the site details so that I can sign up as a participant, be able to view the surveys and select a survey to fill.
+
+As a respondent, I want to view the pricing list that is the price or service description so that I can select and determine how many surveys to fill.
+
+As a respondent, I want to view the total number of answered polls so that I can know how much I have earned from taking the surveys.
+
+**AS A BUSINESS USER**
+
+As a business or client, I want to be able to view the site details so that I can sign up as a client surveyor with Vote.
+
+As a business, I want to view the pricing list (price, service description) so that I can select the appropriate survey package.
+
+As a business, I want to view the total number of answered polls, be able to see the answers so that I can determine voter behaviour, get instant feedback to help create an informed marketing strategy.
+
+**USER STORIES CATEGORIES SUMMARY**
+
+1.	Viewing and Navigation
+
+* The main/landing page of the vote platform loads-should have
+* users both registered and unregistered can view the vote site-must have
+* users can navigate from the landing page, registration page-must have
+
+2.	Registration and User accounts
+
+* users can register as a business/surveyor or respondent/suveyee-must have
+* users can log in-should have
+* users can sign in with username and passwords-must have
+* users can log out-should have
+
+3.	Creating and Taking survey polls
+
+* a single service page loads-should have
+* a business user can add, update a survey-must have
+* a respondent can view and fill the survey-must have
+* a business user can view the total polls and answers-should have
+* a respondent can view the total polls filled-should have
+
+4.	Payments
+
+* The payment page loads-should have
+* both business and respondents can reach the checkout page-must have
+* the surveyor can pay for posting a survey-must have
+* the respondent can receive payment for filling a survey-must have
+
+5.	Administration and platform management.
+
+* the surveyor can delete old surveys-could have
+* separate portal for site administrators-would have
 
 ------
 
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
+## FEATURES
 ------
+1. **The Navigation Bar**
 
-## FAQ about the uptime script
+* The navigation bar is responsive and is included on all the site pages. It provides  links to the home page, the survey votes, the login, register and admin pages.
 
-**Why have you added this script?**
+* This section allows users to go from page to page across all devices without having to use the back button to return to the previous page.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* The nav bar appears different for users who are not logged into the system and also has a different view for users who are registered.
 
-**How will this affect me?**
+![The Navigation bar before login](static/img/navbarbeforelogin.PNG)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+* navbar after login
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![The Navigation bar after login](static/img/navbarafterlogin.PNG)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+2. **The landing page**
 
-**So….?**
+* The first page that a user lands on when they access the vote platform. The page comprises an image, the services, the website details, the pricing,  the newsletter subscription  button, a social media handle.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![The landing page](static/img/landingpage.PNG)
 
-**Can I opt out?**
+3. **The register page**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The page captures information such user name and passwords(authentication credentials) for new users on the website.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![The register page](static/img/registerform.PNG)
 
-**Anything more?**
+4. **The login page**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The page allows users who are already registered on the website to sign into the platform.
 
----
+![The login page](static/img/loginpage.PNG)
 
-Happy coding!
+* The admin login page
+
+![The admin view](static/img/adminportal.PNG)
+
+5. **Respond page**
+
+The respond page enables users who registered to take surveys on the platform. When the users click on the take survey button, it redirects them to the vote survey portal. the portal has information on the available surveys, and allows the users to search for specific surveys and also to organize the lists in either ascending or descending order  by date, votes or name.
+
+![The respond page](static/img/takeoraddsurvey.PNG)
+
+6. **The publish page**
+
+The publish page enables business users to publish surveys on the platform. When the users click on the publish survey button, it redirects them to the vote survey portal. the portal has information on the available surveys, and allows the users to search for specific surveys and also to organize the lists in either ascending or descending order  by date, votes or name. The portal also enables business users to add or update surveys. **Note** Both respondents and business users are redirected to the vote survey portal, howvever, only business users have permissions to create, update or delete surveys.
+
+![The publish page](static/img/create%20new%20poll.PNG)
+
+![The editpoll](static/img/editsurvey.PNG)
+
+7. **payment for poll**
+
+This enables business users to pay for the surveys by capturing payment details.
+
+![The pay for post page](static/img/payforpost.PNG)
+
+8. **payment to respondents**
+
+This enables respondents to get pay for the surveys taken.
+
+![The pay respondent page](static/img/payrespondent.PNG)
+
+**Features left to Implement**
+
+* Exapnd access levels to include three access levels instead of the initial two being surveyors and respondents. The three would be surveyors, respondents and the platform admin who is independent of the surveyors or respondents.
+
+* Implement live payment method since this is a prototype and the current payment method is in test mode. There it cannot process live payments.
+
+---------
+
+## DATABASE SCHEMA
+
+Within the vote 4 me database, a user or surveyor creates a poll, this poll is comprised of choices upon which the respondent votes.
+
+The database schema is comprised of the following custom models;
+
+![The database schema](static/img/erd_vote.PNG)
+
+**1.User**
+
+* The User model is used to capture vote user details. These include details for surveyors and respondents. This model's unique identifier is the user ID.
+
+**2.Poll**
+
+* This model is used capture poll data. This includes poll status, poll ID being the primary key, date of publishment and the owner of the poll which is the surveyor. The poll model is related to all the models in the vote database schema. This relationship is enforced by the presence of the users's ID as a foreign key.
+
+* Furthermore, the poll ID also appears as the foreign key in the vote and choice models.
+
+**3.Vote**
+
+* This model is used to capture vote details which include vote ID as a primary key, user ID, choice ID, and poll ID as foreign keys.
+
+* These foreign keys represent the vote owner or respondent, the choice being the answer of the respondent and poll ID being the poll under which the choices are categorized.
+
+* This illustrates a one to many relationship between the vote, choice, poll and user models.
+
+**4.Choice**
+
+* The choice model is used to capture choice ID as a primary key, poll ID as a foreign key for which poll the choice belongs to and also the choice text.
+
+* The choice model has a one to many relationship to the different models in the database.
+
+------------
+
+## TESTING AND VALIDATION
+
+* Ecommerce testing was performed where various ecommerce elements such as design, specifications, functionalities, pages and features are tested to check their sanity and ensure they are not harming the performance of the site in any manner possible.
+
+**Testing plan for the vote platform**
+
+*	Users can log in
+*	Users can register as a business/surveyor or respondent
+*	The main/landing page of the vote platform loads
+*	The payment page loads
+*	A single service page loads
+*	A business user can add, update a survey
+*	A respondent user can view and fill a survey
+*	A business user can view the total polls, and answers
+*	A respondent can view the total polls filled
+*	Both business and respondents can reach the logout page
+*	A registered user can logout
+
+### Testing
+
+**1. Automated Django Unit tests**
+
+Django unit testing was used to;
+
+* -Ensure a relationship exists, between the user and poll models. This is relationship was
+tested by checking if a poll can be created by a non exitent user.
+* -Test if the index, login and signup or register urls can be accessed or served by the application.
+* -Test if the server is handling non existent url calls to our application.
+
+* The results after running through "python manage.py test"
+
+![The automated tests](static/img/unit_tests.PNG)
+
+**2.The functionality of the site**
+
+* The Vote application operates or functions, simply by, a respondent or user accessing the platform through the index or landing page,
+he or she then can navigate through the application through the navigation bar located a the top of every page. He she cannot access the vote services
+before he/she signs up using the register page. After successful registration, users are then redirected to the login page where they can login and access
+vote surveys and other services.
+
+* Suveyors on the other hand are registered by the Vote platform admins, surveyors can create polls but are automatically redirected to a payment link where they pay
+for posting a survey or poll. Each poll among other attributes, comprises of an Id, multiple choices and votes on each respective choice. Only surveyors can create, delete or update polls or surveys.
+
+* After addition of polls and their different choices, only the logged in or authorised respondents can then vote once on every poll and are then redirected to a payment
+link where they can collect payment for every single vote they cast, or opinion they share. Votes are compiled after every vote and results are visible to the surveyors who can then close the polls.
+
+* All users can log out at will, after transacting as pleased and getting paid with the vote platform.
+
+* I have tested and comfirmed that all the functionality mentioned herein works as described.
+
+**3.Responsiveness**
+
+* The vote 4 me app is responsive to different media devices. Media queries are set for different device views with a maximum width of 768 pixels and 600 pixels or below.
+
+* I have tested the responsiveness of the vote 4 me app and therefore happy to report that through code inspection, the vote app responds well to different device views.
+
+**4.Bugs and fixes**
+
+**Bug 1:** During the login phase, there was a bug that returned false message for users created that are not in the system. This bug was fixed by displaying the information in a flash message.
+
+**Bug 2:** There was an error when capturing user account payment credentials. There was no need to capture user payment credentials due to the fact that we are using stripe payments.
+
+### Validation
+
+*	Frontend validation was used to ensure that form data being submitted to our views are not empty or null.
+
+![The frontend validation](static/img/front_end_validtn.PNG)
+
+*	Server-side validation was used to ensure that the right data was being posted before capturing it to the database.
+
+**Validator testing**
+
+**1.HTML**
+
+* No error was found when passing through the offcicial W3C validator.
+
+![The html validation](static/img/w3c_html_and_css.PNG)
+
+**2.CSS**
+
+* No errors were found when passing through the official jigsaw validator.
+
+![The css validation](static/img/w3_jigsaw.PNG)
+
+**3.Python**
+
+* No errors were found in the final code base when passing through the pycodestyle validator.
+
+![The pycodestyle validation](static/img/pycodestyle_check.PNG)
+
+**4.Accessibility**
+
+* The accessibility score for desktop applications using lighthouse is 93.
+
+![lighthouse results](static/img/lighthouse.PNG)
+
+![The accessibility results](static/img/accessibilitylighthouse.PNG)
+
+---------
+
+## DEPLOYMENT
+
+**Version Control**
+
+*	The site was created using the Visual Studio Code editor and pushed to GitHub to the remote repository vote.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+*	git add - This command was used to add the file(s) to the staging area before they are committed.
+
+*	git commit -m "commit message" - This command was used to commit changes to the local repository queue ready for the final step.
+
+*	git push - This command was used to push all committed code to the remote repository on GitHub.
+
+**Heroku deployment**
+
+The following steps were followed to deploy this project to Heroku:
+
+*	Go to Heroku and click "New" to create a new app(“vote4me”).
+
+*	Choose an app name and region (“EU Stockholm-eu-north-1”), click "Create app"
+
+*	Go to "Settings" and navigate to Config Vars. Add the following config variables:
+PORT : 8000
+disable_connectstatic:1
+
+*	Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
+
+*	Navigate to "Deploy". Set the deployment method to GitHub and enter repository name (“vote”) and connect.
+
+*	Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
+
+*	The app will now be deployed to Heroku.
+
+* The live link can be found here https://vote4me.herokuapp.com/
+
+--------
+
+## CREDITS
+
+*	Boutique ado project videos on how to deploy the application to Heroku, use AWS, Mailchimp and stripe.
+
+*	W3C Schools for functions used in this python command line terminal application https://www.w3schools.com/python/python_functions.asp
+
+*	You tube tutorials on how to import library in python https://www.youtube.com/watch?v=h0oRPIlnJYQ
+
+*	Survey and poll data about why the use of polls for entrepreneurs or businesses obtained from https://www.typeform.com/examples/polls/
+
+*	 Free photos used for the landing page from pixabay obtained from https://pixabay.com/images/search/free%20images/
+
+*	Ecommerce testing description obtained from https://vwo.com/blog/ecommerce-testing/
+
+*	Stripe payments data obtained from https://dashboard.stripe.com/payments
+
+*	AWS bucket creation pdf document obtained from https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf
+
+*	Solutions to questions and bugs using stack overflow https://stackoverflow.com/
+
+*	Fixed some pep8 validation errors using stack overflow https://stackoverflow.com/questions/492387/indentationerror-unindent-does-not-match-any-outer-indentation-level
