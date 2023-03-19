@@ -235,6 +235,20 @@ tested by checking if a poll can be created by a non exitent user.
 ![The automated tests](static/img/unit_tests.PNG)
 
 **2.The functionality of the site**
+The Vote application operates or functions, simply by, a respondent or user accessing the platform through the index or landing page,
+he or she then can navigate through the application through the navigation bar located a the top of every page. He she cannot access the vote services
+before he/she signs up using the register page. After successful registration, users are then redirected to the login page where they can login and access
+vote surveys and other services.
+
+Suveyors on the other hand are registered by the Vote platform admins, surveyors can create polls but are automatically redirected to a payment link where they pay
+for posting a survey or poll. Each poll among other attributes, comprises of an Id, multiple choices and votes on each respective choice. Only surveyors can create, delete or update polls or surveys.
+
+After addition of polls and their different choices, only the logged in or authorised respondents can then vote once on every poll and are then redirected to a payment 
+link where they can collect payment for every single vote they cast, or opinion they share. Votes are compiled after every vote and results are visible to the surveyors who can then close the polls.
+
+All users can log out at will, after transacting as pleased and getting paid with the vote platform.
+
+I have tested and comfirmed that all the functionality mentioned herein works as described.
 
 **3.Responsiveness**
 
