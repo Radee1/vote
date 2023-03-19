@@ -1,5 +1,7 @@
 # VOTE
 
+![The multidevice mockup for vote](static/img/multidevicemockup.PNG)
+
 **WHO:** The business model that the Vote ecommerce platform uses is a B2B (Business to Business). This means that other businesses or organizations are our customers.
 
 **WHAT(Deliverable):** Vote ecommerce website is a platform that offers services. The site offers survey or poll services because we believe that feedback matters. Businesses come with their queries and then we connect them to users on the platform who are in turn paid for their time to take the surveys. Therefore, vote enables clients to create and the respondents to take surveys through paid opinion polls.
@@ -27,17 +29,17 @@ If you're a marketer or entrepreneur, you can poll customers to get straight ans
 
 ### VOTE MARKETING STRATEGIES
 
-Sharing a direct link to the online survey.
+* Sharing a direct link to the online survey.
 
-Partnering with relevant influencers on social media like Facebook who can help spread the word.
+* Partnering with relevant influencers on social media like Facebook who can help spread the word.
 
 ![The facebook page1](static/img/votefb1.JPG)
 
 ![The facebook page2](static/img/votefb.JPG)
 
-Offering a prize for participants to encourage more involvement.
+* Offering a prize for participants to encourage more involvement.
 
-The use of newsletters through email marketing with the help of Mailchimp.
+* The use of newsletters through email marketing with the help of Mailchimp.
 
 ![The Mailchimp News letter](static/img/mailchimpnewsletter.PNG)
 
