@@ -211,17 +211,70 @@ The database schema is comprised of the following custom models;
 *	Both business and respondents can reach the logout page
 *	A registered user can logout
 
-**Testing**
+### Testing
 
-•	Using Django unit testing to ensure that models within the app exist, are functioning and can be used to capture user data.
+**1. Automated Django Unit tests**
 
-**Validation**
+Django unit testing was used to;
+
+* -Ensure a relationship exists, between the user and poll models. This is relationship was
+tested by checking if a poll can be created by a non exitent user.
+* -Test if the index, login and signup or register urls can be accessed or served by the application.
+* -Test if the server is handling non existent url calls to our application.
+
+* The results after running through "python manage.py test"
+
+![The automated tests](static/img/unit_tests.PNG)
+
+**2.The functionality of the site**
+
+**3.Responsiveness**
+
+* The vote 4 me app is responsive to different media devices. Media queries are set for different device views with a maximum width of 768 pixels and 600 pixels or below.
+
+* I have tested the responsiveness of the vote 4 me app and therefore happy to report that through code inspection, the vote app responds well to different device views.
+
+**4.Bugs and fixes**
+
+**Bug 1:** During the login phase, there was a bug that returned false message for users created that are not in the system. This bug was fixed by displaying the information in a flash message.
+
+**Bug 2:** There was an error when capturing user account payment credentials. There was no need to capture user payment credentials due to the fact that we are using stripe payments.
+
+### Validation
 
 •	Frontend validation was used to ensure that form data being submitted to our views are not empty or null.
 
+![The frontend validation](static/img/front_end_validtn.PNG)
+
 •	Server-side validation was used to ensure that the right data was being posted before capturing it to the database.
 
-### BUGS AND FIXES
+**Validator testing**
+
+**1.HTML**
+
+* No error was found when passing through the offcicial W3C validator.
+
+![The html validation](static/img/w3c_html_and_css.PNG)
+
+**2.CSS**
+
+* No errors were found when passing through the official jigsaw validator.
+
+![The css validation](static/img/w3_jigsaw.PNG)
+
+**3.Python**
+
+* No errors were found in the final code base when passing through the pycodestyle validator.
+
+![The pycodestyle validation](static/img/pycodestyle_check.PNG)
+
+**4.Accessibility**
+
+* The accessibility score for desktop applications using lighthouse is 93.
+
+![lighthouse results](static/img/lighthouse.PNG)
+
+![The accessibility results](static/img/accessibilitylighthouse.PNG)
 
 ---------
 
